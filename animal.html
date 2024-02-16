@@ -9,32 +9,36 @@
 <h2>Getting input</h2>
 
 <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
-
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
-
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    <label for="form1_animaltype">The hidden animal type </label>
+    <input type ="password" id="form1_anitype" name="form1_animaltype" value = "chicken"> <br>
+    
+    <label for="form1_guessanimal">Guess the animal </label>
+    <input type ="text" id="form1_aniguess" name="form1_guessanimal" autofocus> <br>
+    <br>
+    <input type="button" onclick="checkAnimal()" value="Check the guess">
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result"></p>
 
 <script> 
-
-function resolveForm (){
+var wrong =0,correct=0;
+function checkAnimal (){
     console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
+   var type = document.getElementById("form1_anitype").value
+    var guessanimal = document.getElementById("form1_aniguess").value
+    if(type == guessanimal.toLowerCase())
+    {
+        correct = correct + 1;
+        alert("Ruff ruff");
     }
+    else{
+        wrong = wrong + 1;
+        alert("Grrrr");
+    }
+    
+   var out = document.getElementById("result");
+   out.innerHTML = "Correct count is " + correct + " Wrong count is " + wrong;
 }
 </script>
 
