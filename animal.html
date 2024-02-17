@@ -20,9 +20,12 @@
 
 
 <p id="result"></p>
-
+<div>
+    <br>
+    <img src = "https://www.norinesnest.com/wp-content/uploads/2019/07/Fresh-Lemonade-2019-1-1.jpg" height="150" width = "150" onclick="selectImage()"></img>
+</div>
 <script> 
-var wrong =0,correct=0;
+var wrong =0,correct=0,useImage=1;
 function checkAnimal (){
     console.log("Getting form values")
    var type = document.getElementById("form1_anitype").value
@@ -33,12 +36,22 @@ function checkAnimal (){
         alert("Ruff ruff");
     }
     else{
-        wrong = wrong + 1;
+        wrong = wrong + 1;w
         alert("Grrrr");
     }
     
    var out = document.getElementById("result");
    out.innerHTML = "Correct count is " + correct + " Wrong count is " + wrong;
+}
+
+function selectImage()
+{
+     switch (useImage){
+        case 1:
+            <img src = "https://drscdn.500px.org/photo/121232833/q%3D80_m%3D2000_k%3D1/v2?webp=true&sig=8995317f4fe7014725d53b302e40784c353bcfcb518df549747c237d7f2252a0" height = "150" width="150"></img>
+
+     }
+
 }
 </script>
 
