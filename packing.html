@@ -4,12 +4,37 @@
     <title>Lets pack things</title>
     <h2>Tejaswi Allam packs for a 
         trip</h2>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                padding: 15px;
+                font-family :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            #result {
+                margin-top: 20px;
+                font-size:medium;
+                color: blueviolet;
+                padding: 15px;
+            }
+            #secondrel{
+                margin-top: 20px;
+                font-size:medium;
+                color: blueviolet;
+                padding: 15px; 
+            }
+            .checkinput{
+                background-color: antiquewhite;
+            }
+            .checkform{
+                background-color: beige;
+            }
+         </style>  
  </head>
 <body>
 
 <h2>Getting input</h2>
 
-<form>
+<form class = "checkinput">
     <input type="checkbox" id="cb1_packlight" name="tripitem1"   
       value="packlight" checked>
     <label for="cb1_packlight">Pack light</label></br>
@@ -27,7 +52,7 @@
 
 
 <p id="result"></p>
-<form>
+<form class = "checkform">
     <label for="form1_month">Enter travel month</label>
     <input type ="text" id="form1_month" name="form1_month" value=May> <br>
 
