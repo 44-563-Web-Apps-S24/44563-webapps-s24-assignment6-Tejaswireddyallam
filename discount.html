@@ -2,7 +2,7 @@
 <html>
  <head>
     <title>Discount Calculations page</title>
-    <h4>Tejaswi Allam discount calculations</h4>
+    <h2>Tejaswi Allam discount calculations</h2>
  </head>
 <body>
 
@@ -23,13 +23,25 @@
 
 
 <p id="result"></p>
-
+<form>
+    <input type="radio" id="rg1_sum" value="sum" name = "cal" onclick = "chooseOp()" >
+    <label for="rg1_sum">sum</label></br>
+  
+    <input type="radio" id="rg1_mult" name = "cal" onclick = "chooseOp()"
+       value="multiply">
+    <label for="rg1_mult">mult</label></br>
+  
+    <input type="radio" id="rg1_exp" name = "cal"  onclick = "chooseOp()"   
+       value="exponent">
+    <label for="rg1_exp">exp</label></br>
+  </form>
+  <p id="resultfromradio"></p>
 <script> 
 myOutput = "";
 function discount (){
-   var price = document.getElementById("form1_price").value
-   var count = document.getElementById("form1_count").value
-   var discount = document.getElementById("form1_discount").value
+   var price = parseFloat(document.getElementById("form1_price").value)
+   var count = parseFloat(document.getElementById("form1_count").value)
+   var discount = parseFloat(document.getElementById("form1_discount").value)
     for(i=0;i<5;i++)
     {
       
@@ -43,6 +55,28 @@ function discount (){
     
     out = document.getElementById("result")
     out.innerHTML = "Totals are " + myOutput;
+}
+
+function chooseOp ()
+{
+    var res;
+    var pri = parseFloat(document.getElementById("form1_price").value)
+    var dis = parseFloat(document.getElementById("form1_discount").value)
+    if(document.getElementById("rg1_sum").checked == true)
+    {      
+        res = dis + pri;
+    }
+    if(document.getElementById("rg1_mult").checked == true)
+    {
+        res = pri * dis;
+    }
+    if(document.getElementById("rg1_exp").checked == true)
+    {
+        res = pri ** dis;
+    }
+
+    resradio = document.getElementById("resultfromradio");
+    resradio.innerHTML = res;
 }
 </script>
 
