@@ -3,6 +3,19 @@
  <head>
     <title>Welcome to Animals Park!!</title>
     <h2>Animal game by Tejaswi Allam</h2>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #result {
+            margin-top: 20px;
+            font-size:medium;
+            color:crimson;
+            background-color: antiquewhite;
+        }
+    </style>
  </head>
 <body>
 
@@ -23,6 +36,7 @@
 <div>
     <img id = "imagecourosel" src = "https://www.norinesnest.com/wp-content/uploads/2019/07/Fresh-Lemonade-2019-1-1.jpg" height = "150" width = "150" onclick="selectImage()">
 </div>
+
 <script> 
 var wrong =0,correct=0,useImage=1;
 function checkAnimal (){
@@ -41,6 +55,11 @@ function checkAnimal (){
     
    var out = document.getElementById("result");
    out.innerHTML = "Correct count is " + correct + " Wrong count is " + wrong;
+
+   if(wrong > correct)
+{
+    document.getElementById('imagecourosel').onclick = newfunction();
+}
 }
 
 function selectImage()
@@ -63,6 +82,10 @@ function selectImage()
         
      }
 
+}
+function newfunction()
+{
+    alert("Sorry, too many wrong guesses.");
 }
 </script>
 
